@@ -48,7 +48,6 @@ button {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-left: -38px;
 }
 
 .app-header h1 {
@@ -77,6 +76,7 @@ button {
 .card h2 {
   margin: 0;
   font-size: 20px;
+  color: black;
 }
 
 .section-header {
@@ -360,7 +360,8 @@ td {
 
 .login-header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 25px;
+  color: rgb(70, 70, 209);
 }
 
 .login-header p:last-child {
