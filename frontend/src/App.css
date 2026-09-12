@@ -44,10 +44,11 @@ button {
 
 .eyebrow {
   margin: 0 0 8px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  margin-left: -38px;
 }
 
 .app-header h1 {
