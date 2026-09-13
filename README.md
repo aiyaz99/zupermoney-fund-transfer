@@ -199,20 +199,15 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at:
+## Live Demo
 
-```text
-http://localhost:5173
-```
+- Frontend: https://zupermoney-fund-transfer-production.up.railway.app
+- Backend API: https://noble-miracle-production-94df.up.railway.app
 
-## Demo Login
+### Demo Credentials
 
-Use the following credentials for local/demo access:
-
-```text
-Email: admin@example.com
-Password: password
-```
+- Email: `admin@example.com`
+- Password: `password`
 
 These credentials are created by the database seeder.
 
