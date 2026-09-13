@@ -26,30 +26,28 @@ class FundTransferService
                 ->lockForUpdate()
                 ->firstOrFail();
 
-            if (
-                $type === 'debit'
-                && bccomp(
-                    (string) $distributor->current_balance,
-                    $amount,
-                    2
-                ) < 0
-            ) {
-                throw new RuntimeException(
-                    'Insufficient balance for this debit.'
-                );
-            }
+            $currentBalance = (float) $distributor->current_balance;
+$transferAmount = (float) $amount;
 
-            $newBalance = $type === 'credit'
-                ? bcadd(
-                    (string) $distributor->current_balance,
-                    $amount,
-                    2
-                )
-                : bcsub(
-                    (string) $distributor->current_balance,
-                    $amount,
-                    2
-                );
+if (
+    $type === 'debit'
+    && $currentBalance < $transferAmount
+) {
+    throw new RuntimeException(
+        'Insufficient balance for this debit.'
+    );
+}
+
+$newBalance = $type === 'credit'
+    ? $currentBalance + $transferAmount
+    : $currentBalance - $transferAmount;
+
+$newBalance = number_format(
+    $newBalance,
+    2,
+    '.',
+    ''
+);
 
             $distributor->update([
                 'current_balance' => $newBalance,
